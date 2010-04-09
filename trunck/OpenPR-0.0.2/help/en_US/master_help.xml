@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!--Begin Entities-->
+<!ENTITY aggloms SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/aggloms.xml">
+<!ENTITY ahclustering SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/ahclustering.xml">
+<!ENTITY buildcart SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/buildcart.xml">
+<!ENTITY competitive_learning SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/competitive_learning.xml">
+<!ENTITY confmatrix2ni_ce SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/confmatrix2ni_ce.xml">
+<!ENTITY confmatrix2ni_id SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/confmatrix2ni_id.xml">
+<!ENTITY confmatrix2ni_mi SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/confmatrix2ni_mi.xml">
+<!ENTITY createkernel SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/createkernel.xml">
+<!ENTITY emparams SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/emparams.xml">
+<!ENTITY empredict SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/empredict.xml">
+<!ENTITY emtrain SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/emtrain.xml">
+<!ENTITY fda SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/fda.xml">
+<!ENTITY fuzzy_kmeans SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/fuzzy_kmeans.xml">
+<!ENTITY generalizedda SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/generalizedda.xml">
+<!ENTITY hdr SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/hdr.xml">
+<!ENTITY ica SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/ica.xml">
+<!ENTITY kerneldensitycovering SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/kerneldensitycovering.xml">
+<!ENTITY kfda SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/kfda.xml">
+<!ENTITY kmeans SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/kmeans.xml">
+<!ENTITY kmeans_sci SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/kmeans_sci.xml">
+<!ENTITY knearest SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/knearest.xml">
+<!ENTITY knearest_sci SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/knearest_sci.xml">
+<!ENTITY kpca SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/kpca.xml">
+<!ENTITY lda SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/lda.xml">
+<!ENTITY leader_follower SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/leader_follower.xml">
+<!ENTITY mds SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/mds.xml">
+<!ENTITY ml_gaussian SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/ml_gaussian.xml">
+<!ENTITY mseclustering SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/mseclustering.xml">
+<!ENTITY nbayespredict SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/nbayespredict.xml">
+<!ENTITY nbayestrain SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/nbayestrain.xml">
+<!ENTITY pca2 SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/pca2.xml">
+<!ENTITY plsiread SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/plsiread.xml">
+<!ENTITY plsitrain SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/plsitrain.xml">
+<!ENTITY qdmatch SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/qdmatch.xml">
+<!ENTITY readsparse SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/readsparse.xml">
+<!ENTITY sohclustering SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/sohclustering.xml">
+<!ENTITY sphereconstruction SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/sphereconstruction.xml">
+<!ENTITY svmpredict SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/svmpredict.xml">
+<!ENTITY svmtrain SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/svmtrain.xml">
+<!ENTITY twodpca SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/twodpca.xml">
+<!ENTITY usecart SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/usecart.xml">
+<!ENTITY whitening SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/whitening.xml">
+<!ENTITY wpca SYSTEM "/home/wujia/CurrentWork/OpenPR-0.0.1/help/en_US/wpca.xml">
+<!--End Entities-->
+]>
+<book version="5.0-subset Scilab" xml:lang="en_US"
+      xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:svg="http://www.w3.org/2000/svg"
+      xmlns:mml="http://www.w3.org/1998/Math/MathML"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:db="http://docbook.org/ns/docbook">
+  <info xml:id='openpr_manual_manual'>
+    <title>OpenPR Manual</title>
+  </info>
+
+<part xml:id='section_0d7a615225b514b415ffb603f5ec111f'>
+<title>OpenPR Manual</title>
+&aggloms;
+&ahclustering;
+&buildcart;
+&competitive_learning;
+&confmatrix2ni_ce;
+&confmatrix2ni_id;
+&confmatrix2ni_mi;
+&createkernel;
+&emparams;
+&empredict;
+&emtrain;
+&fda;
+&fuzzy_kmeans;
+&generalizedda;
+&hdr;
+&ica;
+&kerneldensitycovering;
+&kfda;
+&kmeans;
+&kmeans_sci;
+&knearest;
+&knearest_sci;
+&kpca;
+&lda;
+&leader_follower;
+&mds;
+&ml_gaussian;
+&mseclustering;
+&nbayespredict;
+&nbayestrain;
+&pca2;
+&plsiread;
+&plsitrain;
+&qdmatch;
+&readsparse;
+&sohclustering;
+&sphereconstruction;
+&svmpredict;
+&svmtrain;
+&twodpca;
+&usecart;
+&whitening;
+&wpca;
+</part>
+</book>

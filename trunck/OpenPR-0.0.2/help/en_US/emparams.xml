@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <author>
+      <personname>Jia Wu</personname>
+    </author>
+
+    <pubdate>December 2009</pubdate>
+  </info>
+
+  <refnamediv xml:id="emparams">
+    <refname>emparams</refname>
+
+    <refpurpose>Create a struct variable containing parameter values for EM
+    algorithm.</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+
+    <synopsis>params = emparams(nclusters, cov_mat_type, start_step, iter, eps, probs, weights, means, covs)</synopsis>
+  </refsynopsisdiv>
+
+  <refsection>
+    <title>Parameters</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>nclusters</term>
+
+        <listitem>
+          <para>number of Gaussian distributions</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>cov_mat_type</term>
+
+        <listitem>
+          <para>type of covariance matrix. 0 - spherical, 1 - diagonal, 2 -
+          generic</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>start_step</term>
+
+        <listitem>
+          <para>initial step EM starts from. 0 - Auto-step, 1 - E-step, 2 -
+          M-step</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>iter/eps</term>
+
+        <listitem>
+          <para>termination criteria of the procedure. iter for iteration
+          times; eps for difference of change</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>probs</term>
+
+        <listitem>
+          <para>initial probabilities (Pi,k); used(must be not NULL) only when
+          EM starts from M-step</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>weights</term>
+
+        <listitem>
+          <para>initial weights for each distribution; used(if not NULL) only
+          when EM starts from E-step</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>means</term>
+
+        <listitem>
+          <para>initial means of each distribution; used(must be not NULL)
+          only when EM starts from E-step</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>covs</term>
+
+        <listitem>
+          <para>initial covariance matrix of each distribution; used(if not
+          NULL) only when EM starts from E-step</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsection>
+
+  <refsection>
+    <title>Authors</title>
+
+    <simplelist>
+      <member>Jia Wu &lt;jiawu83@gmail.com&gt;</member>
+    </simplelist>
+  </refsection>
+
+  <refsection>
+    <title>Availability</title>
+
+    <para>The latest version of OpenPR can be found at
+    http://www.openpr.org.cn.</para>
+  </refsection>
+
+  <refsection>
+    <title>See Also</title>
+
+    <simplelist type="inline">
+      <member><link linkend="emtrain">emtrain</link></member>
+
+      <member><link linkend="empredict">empredict</link></member>
+    </simplelist>
+  </refsection>
+</refentry>

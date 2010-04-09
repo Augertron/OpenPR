@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <author>
+      <personname>Jia Wu</personname>
+    </author>
+
+    <pubdate>January 2010</pubdate>
+  </info>
+
+  <refnamediv xml:id="usecart">
+    <refname>usecart</refname>
+
+    <refpurpose>Use a trained classification and regression tree to predict
+    the labels of given samples.</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+
+    <synopsis>labels = usecart(samples, indices, cart)</synopsis>
+  </refsynopsisdiv>
+
+  <refsection>
+    <title>Parameters</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>samples</term>
+
+        <listitem>
+          <para>input sample matrix; each column is a sample point</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>indices</term>
+
+        <listitem>
+          <para>indices of selected samples</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>cart</term>
+
+        <listitem>
+          <para>the trained classification and regression tree by function
+          <link linkend="buildcart">buildcart</link></para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>labels</term>
+
+        <listitem>
+          <para>predicted labels of the input samples</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsection>
+
+  <refsection>
+    <title>Examples</title>
+
+    <programlisting role="example">train_samples=[0.15 0.09 0.29 0.38 0.52 0.57 0.73 0.47 0.1  0.08 0.23 0.7  0.62 0.91 0.65 0.75;
+               0.83 0.55 0.35 0.7  0.48 0.73 0.75 0.06 0.29 0.15 0.16 0.19 0.47 0.27 0.9  0.36];
+train_labels=[1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0];
+impurity_type='Gini';
+cart=buildcart(train_samples,train_labels,impurity_type);
+
+samples=rand(2,10);
+indices=1:size(samples,2);
+labels = usecart(samples, indices, cart)
+</programlisting>
+  </refsection>
+
+  <refsection>
+    <title>Authors</title>
+
+    <simplelist>
+      <member>Jia Wu &lt;jiawu83@gmail.com&gt;</member>
+    </simplelist>
+  </refsection>
+
+  <refsection>
+    <title>Availability</title>
+
+    <para>The latest version of OpenPR can be found at
+    http://www.openpr.org.cn</para>
+  </refsection>
+
+  <refsection>
+    <title>See Also</title>
+
+    <simplelist type="inline">
+      <member><link linkend="buildcart">buildcart</link></member>
+    </simplelist>
+  </refsection>
+</refentry>

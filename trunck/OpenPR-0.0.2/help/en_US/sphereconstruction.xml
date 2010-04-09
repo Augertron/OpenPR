@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <author>
+      <personname>Xiao-Tong Yuan</personname>
+    </author>
+
+    <pubdate>June 2009</pubdate>
+  </info>
+
+  <refnamediv xml:id="sphereconstruction">
+    <refname>sphereconstruction</refname>
+
+    <refpurpose>nstruct hypersphere from a given point by
+    Mean-Shift.</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+
+    <synopsis>[s_center, radius] = sphereconstruction(p_start, data, sigma)</synopsis>
+  </refsynopsisdiv>
+
+  <refsection>
+    <title>Parameters</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>p_start</term>
+
+        <listitem>
+          <para>Given point from which hypersphere to be constructed.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>data</term>
+
+        <listitem>
+          <para>Data matrix. Each column vector is a data point.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>sigma</term>
+
+        <listitem>
+          <para>Bandwidth of Gaussian kernel.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>s_center</term>
+
+        <listitem>
+          <para>Center of the constructed hypersphere.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>radius</term>
+
+        <listitem>
+          <para>Radius of the cosntructed hypersphere.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsection>
+
+  <refsection>
+    <title>Description</title>
+
+    <para>This function is used to construct a hypersphere from a given point
+    by running one-iteration of Mean-Shift on the data set.</para>
+  </refsection>
+
+  <refsection>
+    <title>Author</title>
+
+    <simplelist>
+      <member>Xiao-Tong Yuan &lt;xtyuan@nlpr.ia.ac.cn&gt;</member>
+    </simplelist>
+  </refsection>
+
+  <refsection>
+    <title>Bibliography</title>
+
+    <para>Xiao-Tong Yuan, Bao-Gang Hu and Ran He, Agglomerative Mean-Shift
+    Clustering via Query Set Compression, SDM 2009</para>
+  </refsection>
+
+  <refsection>
+    <title>Availability</title>
+
+    <para>The latest version of OpenPR can be found at
+    http://www.openpr.org.cn.</para>
+  </refsection>
+
+  <refsection>
+    <title>See Also</title>
+
+    <simplelist type="inline">
+      <member><link linkend="aggloms">aggloms</link></member>
+
+      <member><link
+      linkend="kerneldensitycovering">kerneldensitycovering</link></member>
+    </simplelist>
+  </refsection>
+</refentry>
