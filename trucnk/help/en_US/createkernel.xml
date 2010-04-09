@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <author>
+      <personname>Jia Wu</personname>
+    </author>
+
+    <pubdate>November 2009</pubdate>
+  </info>
+
+  <refnamediv xml:id="createkernel">
+    <refname>createkernel</refname>
+
+    <refpurpose>Kernel Function.</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+
+    <synopsis>K = createkernel(x, y, param)</synopsis>
+  </refsynopsisdiv>
+
+  <refsection>
+    <title>Parameters</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>x</term>
+
+        <listitem>
+          <para>dim*numx data matrix. Each column is a data point.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>y</term>
+
+        <listitem>
+          <para>dim*numy data matrix. Each column is a data point.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>param</term>
+
+        <listitem>
+          <para>A struct variable with the following fields:</para>
+
+          <itemizedlist>
+            <listitem>
+              <para><literal>typ</literal></para>
+
+              <para>Gaussian: exp(-|x-y|^2/2t^2)</para>
+
+              <para>Polynomial: (c*x'*y+r)^d</para>
+
+              <para>Linear: x'*y</para>
+
+              <para>Sigmoid: tanh(c*x'*y+r)</para>
+            </listitem>
+          </itemizedlist>
+
+          <itemizedlist>
+            <listitem>
+              <para><literal>t</literal> - kernel parameter</para>
+            </listitem>
+          </itemizedlist>
+
+          <itemizedlist>
+            <listitem>
+              <para><literal>c</literal> - kernel parameter</para>
+            </listitem>
+          </itemizedlist>
+
+          <itemizedlist>
+            <listitem>
+              <para><literal>r</literal> - kernel parameter</para>
+            </listitem>
+          </itemizedlist>
+
+          <itemizedlist>
+            <listitem>
+              <para><literal>d</literal> - kernel parameter</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>K</term>
+
+        <listitem>
+          <para>numx*numy kernel matrix.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsection>
+
+  <refsection>
+    <title>Examples</title>
+
+    <programlisting role="example">x = rand(2,10);
+y = rand(2,15);
+param = struct('typ', 'Gaussian', 't', 1);
+K = createkernel(x, y, param);</programlisting>
+  </refsection>
+
+  <refsection>
+    <title>Authors</title>
+
+    <simplelist>
+      <member>Jia Wu &lt;jiawu83@gmail.com&gt;</member>
+    </simplelist>
+  </refsection>
+
+  <refsection>
+    <title>Availability</title>
+
+    <para>The latest version of OpenPR can be found at
+    http://www.openpr.org.cn.</para>
+  </refsection>
+</refentry>

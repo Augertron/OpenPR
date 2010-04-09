@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <author>
+      <personname>Jia Wu</personname>
+    </author>
+
+    <pubdate>February 2010</pubdate>
+  </info>
+
+  <refnamediv xml:id="mds">
+    <refname>mds</refname>
+
+    <refpurpose>multidimensional scaling (MDS)</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+
+    <synopsis>new_samples = mds(train_samples, dimension, criterion, rate, eps, max_iter)</synopsis>
+  </refsynopsisdiv>
+
+  <refsection>
+    <title>Parameters</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>train_samples</term>
+
+        <listitem>
+          <para>data matrix of size dim*num; each column is a sample</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>dimension</term>
+
+        <listitem>
+          <para>output dimension with default value 2</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>criterion</term>
+
+        <listitem>
+          <para>criterion function with default 'ee'; the criterion can
+          be:</para>
+
+          <para>'ee' emphasize the largest errors</para>
+
+          <para>'ff' emphasize the largest fractional errors</para>
+
+          <para>'ef' emphasize the largest product of error and fractional
+          error</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>rate</term>
+
+        <listitem>
+          <para>convergence rate with default value 0.1</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>eps</term>
+
+        <listitem>
+          <para>accuracy with default value 0.01</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>max_iter</term>
+
+        <listitem>
+          <para>maximal number of iteration with default value 1000</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>new_samples</term>
+
+        <listitem>
+          <para>new samples after multidimensional scaling</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsection>
+
+  <refsection>
+    <title>Description</title>
+
+    <para>The function represent the sample points in a lower-dimensional
+    space such that distances between points in that space correspond to the
+    dissimilarities between points in the original space. It now supports 3
+    criterion functions and finally finds an optimal representation which
+    minimizes the criterion function.</para>
+  </refsection>
+
+  <refsection>
+    <title>Examples</title>
+
+    <programlisting role="example">train_samples = rand(4, 20);
+new = mds(train_samples);</programlisting>
+  </refsection>
+
+  <refsection>
+    <title>Authors</title>
+
+    <simplelist>
+      <member>Jia Wu &lt;jiawu83@gmail.com&gt;</member>
+    </simplelist>
+  </refsection>
+
+  <refsection>
+    <title>Availability</title>
+
+    <para>The latest version of OpenPR can be found at
+    http://www.openpr.org.cn</para>
+  </refsection>
+
+  <refsection>
+    <title>See Also</title>
+
+    <simplelist type="inline">
+      <member><link linkend="pca2">pca2</link></member>
+
+      <member><link linkend="hdr">hdr</link></member>
+    </simplelist>
+  </refsection>
+</refentry>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <author>
+      <personname>Jia Wu</personname>
+    </author>
+
+    <pubdate>May, 2009</pubdate>
+  </info>
+
+  <refnamediv xml:id="svmpredict">
+    <refname>svmpredict</refname>
+
+    <refpurpose>Predict class of the new input data according to a pre-trained
+    model.</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+
+    <synopsis>[predicted_label,accuracy,decision_values/prob_estimates]=svmpredict(testing_label_vector,testing_instance_matrix,model[,libsvm_options])</synopsis>
+  </refsynopsisdiv>
+
+  <refsection>
+    <title>Parameters</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>testing_label_vector</term>
+
+        <listitem>
+          <para>An m by 1 vector of prediction labels. If labels of test data
+          are unknown, simply use any random values. (type must be
+          double)</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>testing_instance_matrix</term>
+
+        <listitem>
+          <para>An m by n matrix of m testing instances with n features. It
+          can be dense or sparse. (type must be double)</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>model</term>
+
+        <listitem>
+          <para>The output of svmtrain.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>libsvm_options</term>
+
+        <listitem>
+          <para>A character string of testing options.</para>
+
+          <variablelist>
+            <varlistentry>
+              <term>-b probability_estimates</term>
+
+              <listitem>
+                <para>whether to predict probability estimates, 0 or 1
+                (default 0); for one-class SVM only 0 is supported</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>predicted_label</term>
+
+        <listitem>
+          <para>A vector of predicted labels.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>accuracy</term>
+
+        <listitem>
+          <para>A vector including accuracy (for classification), mean squared
+          error, and squared correlation coefficient (for regression).</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>decision_values/prob_estimates</term>
+
+        <listitem>
+          <para>A matrix containing decision values or probability estimates
+          (if '-b 1' is specified). If k is the number of classes, for
+          decision values, each row includes results of predicting k(k-1/2)
+          binary-class SVMs. For probabilities, each row contains k values
+          indicating the probability that the testing instance is in each
+          class. The order of classes here is the same as 'Label' field in the
+          model structure.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsection>
+
+  <refsection>
+    <title>Description</title>
+
+    <para>Predict class of the new input data according to a pre-trained
+    model.</para>
+  </refsection>
+
+  <refsection>
+    <title>Examples</title>
+
+    <programlisting role="example">        Probability estimates (need '-b 1' for training and testing):
+
+             [label_vector, instance_vector] = readsparse('heart_scale');
+             model = svmtrain(label_vector, instance_vector, '-c 1 -g 0.07 -b 1');
+             [label_vector, instance_vector] = readsparse('heart_scale');
+             [predict_label, accuracy, prob_estimates] = svmpredict(label_vector, instance_vector, model, '-b 1');</programlisting>
+  </refsection>
+
+  <refsection>
+    <title>Authors</title>
+
+    <simplelist>
+      <member>Chih-Jen Lin cjlin@csie.ntu.edu.tw</member>
+
+      <member>Chih-Chung Chang</member>
+
+      <member>Jun-Cheng Chen</member>
+
+      <member>Kuan-Jen Peng</member>
+
+      <member>Chih-Yuan Yang</member>
+
+      <member>Chih-Huai Cheng</member>
+
+      <member>Rong-En Fan</member>
+
+      <member>Ting-Fan Wu</member>
+
+      <member>Jia Wu jiawu83@gmail.com</member>
+    </simplelist>
+  </refsection>
+
+  <refsection>
+    <title>Bibliography</title>
+
+    <para>Chih-Chung Chang and Chih-Jen Lin, LIBSVM : a library for support
+    vector machines, 2001. Software available at
+    http://www.csie.ntu.edu.tw/~cjlin/libsvm.</para>
+  </refsection>
+
+  <refsection>
+    <title>Availability</title>
+
+    <para>The latest version of OpenPR can be found at
+    http://www.openpr.org.cn.</para>
+  </refsection>
+
+  <refsection>
+    <title>See Also</title>
+
+    <simplelist type="inline">
+      <member><link linkend="svmtrain">svmtrain</link></member>
+
+      <member><link linkend="readsparse">readsparse</link></member>
+    </simplelist>
+  </refsection>
+</refentry>

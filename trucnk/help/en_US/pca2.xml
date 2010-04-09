@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <author>
+      <personname>Jia Wu</personname>
+    </author>
+
+    <pubdate>November 2009</pubdate>
+  </info>
+
+  <refnamediv xml:id="pca2">
+    <refname>pca2</refname>
+
+    <refpurpose>Principal component analysis on data.</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+
+    <synopsis>[new_patterns, m, eig_val, eig_vec] = pca2(patterns, dimension)</synopsis>
+  </refsynopsisdiv>
+
+  <refsection>
+    <title>Parameters</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>patterns</term>
+
+        <listitem>
+          <para>Data matrix; each column corresponds to a data point.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>dimension</term>
+
+        <listitem>
+          <para>Number of dimension for the new patterns.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>m</term>
+
+        <listitem>
+          <para>Data centers.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>eig_val</term>
+
+        <listitem>
+          <para>The sorted eigenvalues of covariance matrix.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>eig_vec</term>
+
+        <listitem>
+          <para>The sorted eigenvectors of covariance matrix; each column
+          corresponds to an eigenvector.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsection>
+
+  <refsection>
+    <title>Description</title>
+
+    <para>The function <emphasis>pca</emphasis><emphasis>2</emphasis>
+    implements PCA analysis on input data matrix
+    <emphasis>patterns</emphasis>, returning the data center vector(mean
+    vector) <emphasis>m</emphasis>, eigenvalues of covariance matrix
+    <emphasis>eig_val</emphasis>, eigenvectors of the covariance matrix
+    <emphasis>eig_vec</emphasis>, and new data matrix
+    <emphasis>new_patterns</emphasis> for the input
+    <emphasis>patterns</emphasis>.</para>
+  </refsection>
+
+  <refsection>
+    <title>Examples</title>
+
+    <programlisting role="example">patterns=rand(2, 100);
+dimension=2;
+[new_patterns, m, eig_val, eig_vec]=pca2(patterns, dimension);</programlisting>
+  </refsection>
+
+  <refsection>
+    <title>Authors</title>
+
+    <simplelist>
+      <member>Jia Wu &lt;jiawu83@gmail.com&gt;</member>
+    </simplelist>
+  </refsection>
+
+  <refsection>
+    <title>Availability</title>
+
+    <para>The latest version of OpenPR can be found at
+    http://www.openpr.org.cn.</para>
+  </refsection>
+
+  <refsection>
+    <title>See Also</title>
+
+    <simplelist type="inline">
+      <member><link linkend="wpca">wpca</link></member>
+
+      <member><link linkend="mlda">mlda</link></member>
+
+      <member><link linkend="twodpca">twodpca</link></member>
+    </simplelist>
+  </refsection>
+</refentry>

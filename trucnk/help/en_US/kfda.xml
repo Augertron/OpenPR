@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <author>
+      <personname>Jia Wu </personname>
+    </author>
+
+    <pubdate>November 2009</pubdate>
+  </info>
+
+  <refnamediv xml:id="kfda">
+    <refname>kfda</refname>
+
+    <refpurpose>Kernel Fisher Discriminant Analysis</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+
+    <synopsis>alpha = kfda(x, c, ker)</synopsis>
+  </refsynopsisdiv>
+
+  <refsection>
+    <title>Parameters</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>x</term>
+
+        <listitem>
+          <para>Data matrix of size dim*num. Each column is a data
+          point.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>c</term>
+
+        <listitem>
+          <para>Class label vector of size 1*num or num*1.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>ker</term>
+
+        <listitem>
+          <para>Kernel, a struct variable.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>alpha</term>
+
+        <listitem>
+          <para>The principal eigenvector.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsection>
+
+  <refsection>
+    <title>Description</title>
+
+    <para>Note the function is used for two-class problems.</para>
+  </refsection>
+
+  <refsection>
+    <title>Authors</title>
+
+    <simplelist>
+      <member>Jia Wu &lt;jiawu83@gmail.com&gt;</member>
+    </simplelist>
+  </refsection>
+
+  <refsection>
+    <title>Bibliography</title>
+
+    <para>S. Mika, G. Ratsch, J. Weston, B. Scholkopf, and K.-R. Müller,
+    “Fisher discriminant analysis with kernels,” in Neural Networks for Signal
+    Processing IX, Y.-H. Hu, J. Larsen, E. Wilson, and S. Douglas, Eds.
+    Piscataway, NJ: IEEE, 1999, pp. 41–48.</para>
+  </refsection>
+
+  <refsection>
+    <title>Availability</title>
+
+    <para>The latest version of OpenPR can be found at
+    http://www.openpr.org.cn.</para>
+  </refsection>
+</refentry>

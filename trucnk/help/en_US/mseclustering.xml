@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <author>
+      <personname>Jia Wu</personname>
+    </author>
+
+    <pubdate>February 2010</pubdate>
+  </info>
+
+  <refnamediv xml:id="mseclustering">
+    <refname>mseclustering</refname>
+
+    <refpurpose>basic iterative minimum-squared-error clustering</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+
+    <synopsis>[centers, labels] = mseclustering(train_samples, cluster_num)</synopsis>
+  </refsynopsisdiv>
+
+  <refsection>
+    <title>Parameters</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>train_samples</term>
+
+        <listitem>
+          <para>data matrix of size dim*num; each column is a data
+          point</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>cluster_num</term>
+
+        <listitem>
+          <para>number of desired clusters</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>centers</term>
+
+        <listitem>
+          <para>centers of the formed clusters</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>labels</term>
+
+        <listitem>
+          <para>labels of each trainning sample belonging to the formed
+          clusters</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsection>
+
+  <refsection>
+    <title>Description</title>
+
+    <para>The function implements the basic iterative minimum-squared-error
+    clustering algorithm. It iteratively searches for the desired number of
+    clusters by minimizing the sum of squared error of the training samples
+    with respect to the nearest cluster center. The initial cluster centers
+    are selected from the training samples, and the initial partition is made
+    according to nearest distance between sample data and cluster
+    centers.</para>
+  </refsection>
+
+  <refsection>
+    <title>Examples</title>
+
+    <programlisting role="example">samples = rand(2,30);
+cluster_num = 3;
+[centers, labels] = mseclustering(samples, cluster_num);
+scf(0);
+plot(samples(1,:), samples(2,:), 'b.', 'MarkerSize', 3);
+scf(1);
+clusters = unique(labels);
+plot(samples(1,find(labels==clusters(1))),samples(2,find(labels==clusters(1))),'g.','MarkerSize',3);
+set(gca(),"auto_clear","off");
+plot(samples(1,find(labels==clusters(2))),samples(2,find(labels==clusters(2))),'y.','MarkerSize',3);
+set(gca(),"auto_clear","off");
+plot(samples(1,find(labels==clusters(3))),samples(2,find(labels==clusters(3))),'m.','MarkerSize',3);
+set(gca(),"auto_clear","off");
+plot(centers(1,:), centers(2,:), 'r.', 'MarkerSize', 4);</programlisting>
+  </refsection>
+
+  <refsection>
+    <title>Authors</title>
+
+    <simplelist>
+      <member>Jia Wu &lt;jiawu83@gmail.com&gt;</member>
+    </simplelist>
+  </refsection>
+
+  <refsection>
+    <title>Availability</title>
+
+    <para>The latest version of OpenPR can be found at
+    http://www.openpr.org.cn</para>
+  </refsection>
+
+  <refsection>
+    <title>See Also</title>
+
+    <simplelist type="inline">
+      <member><link linkend="sohclustering">sohclustering</link></member>
+    </simplelist>
+  </refsection>
+</refentry>

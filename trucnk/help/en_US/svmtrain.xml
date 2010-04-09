@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <author>
+      <personname>Jia Wu</personname>
+    </author>
+
+    <pubdate>May, 2009</pubdate>
+  </info>
+
+  <refnamediv xml:id="svmtrain">
+    <refname>svmtrain</refname>
+
+    <refpurpose>Train data.</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+
+    <synopsis>model=svmtrain(training_label_vector, training_instance_matrix [, libsvm_options])</synopsis>
+  </refsynopsisdiv>
+
+  <refsection>
+    <title>Parameters</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>training_label_vector</term>
+
+        <listitem>
+          <para>An m by 1 vector of training labels (type must be
+          double).</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>training_instance_matrix</term>
+
+        <listitem>
+          <para>An m by n matrix of m training instances with n features. It
+          can be dense or sparse (type must be double).</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>libsvm_options</term>
+
+        <listitem>
+          <para>A character string of training options.</para>
+
+          <variablelist>
+            <varlistentry>
+              <term>-s svm_type</term>
+
+              <listitem>
+                <para>set type of SVM (default 0)</para>
+
+                <programlisting>0 - C-SVC
+1 - nu-SVC
+2 - one-class SVM
+3 - epsilon SVR
+4 - nu-SVR</programlisting>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>-t kernel_type</term>
+
+              <listitem>
+                <para>set type of kernel function (default 2)</para>
+
+                <programlisting>0 - linear - u'*v
+1 - polynomial - gamma*u'*v + coef0)^degree
+2 - radial basis function - exp(-gamma*|u-v|^2)
+3 - sigmoid - tanh(gamma*u'*v + coef0)
+4 - precomputed kernel (kernel values in training_set_file)</programlisting>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>-d degree</term>
+
+              <listitem>
+                <para>set degree in kernel function (default 3)</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>-g gamma</term>
+
+              <listitem>
+                <para>set gamma in kernel function (default 1/k). The k means
+                the number of attributes in the input data</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>-r coef0</term>
+
+              <listitem>
+                <para>set coef0 in kernel function (default 0)</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>-c cost</term>
+
+              <listitem>
+                <para>set the parameter C of C-SVC, epsilon-SVR, and nu-SVR
+                (default 1)</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>-n nu</term>
+
+              <listitem>
+                <para>set the parameter nu of nu-SVC, one-class SVM, and
+                nu-SVR (default 0.5)</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>-p epsilon</term>
+
+              <listitem>
+                <para>set the epsilon in loss function of epsilon-SVR (default
+                0.1)</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>-m cachesize</term>
+
+              <listitem>
+                <para>set cache memory size in MB (default 100)</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>-e epsilon</term>
+
+              <listitem>
+                <para>set tolerance of termination criterion (default
+                0.001)</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>-h shrinking</term>
+
+              <listitem>
+                <para>whether to use the shrinking heuristics, 0 or 1 (default
+                1)</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>-b probability_estimates</term>
+
+              <listitem>
+                <para>whether to train an SVC or SVR model for probability
+                estimates, 0 or 1 (default 0)</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>-wi weight</term>
+
+              <listitem>
+                <para>set the parameter C of class i to weight*C in C-SVC
+                (default 1)</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>-v n</term>
+
+              <listitem>
+                <para>n-fold cross validation mode. option -v randomly splits
+                the data into n parts and calculates cross validation
+                accuracy/mean squared error on them</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>model</term>
+
+        <listitem>
+          <para>The returned model structure for future prediction by
+          'svmtrain'. It is a structure organized as [Parameters, nr_class,
+          totalSV, rho, Label, ProbA, ProbB, nSV, sv_coef, SVs].</para>
+
+          <variablelist>
+            <varlistentry>
+              <term>Parameters</term>
+
+              <listitem>
+                <para>parameters</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>nr_class</term>
+
+              <listitem>
+                <para>number of classes; = 2 for regression/one-class
+                svm</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>totalSV</term>
+
+              <listitem>
+                <para>total #SV</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>rho</term>
+
+              <listitem>
+                <para>-b of the decision function(s) wx+b</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>Label</term>
+
+              <listitem>
+                <para>label of each class; empty for regression/one-class
+                SVM</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>ProbA</term>
+
+              <listitem>
+                <para>pairwise probability information; empty if -b 0 or in
+                one-class SVM</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>ProbB</term>
+
+              <listitem>
+                <para>pairwise probability information; empty if -b 0 or in
+                one-class SVM</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>nSV</term>
+
+              <listitem>
+                <para>number of SVs for each class; empty for
+                regression/one-class SVM</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>sv_coef</term>
+
+              <listitem>
+                <para>coefficients for SVs in decision functions</para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>SVs</term>
+
+              <listitem>
+                <para>support vectors</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsection>
+
+  <refsection>
+    <title>Description</title>
+
+    <para>Train data and generate a 'Modle' file which could be thought as a
+    storage format for the internal data of SVM.</para>
+  </refsection>
+
+  <refsection>
+    <title>Examples</title>
+
+    <programlisting role="example">       [label_vector, instance_vector] = readsparse('heart_scale');
+       modle = svmtrain(label_vector, instance_vector, '-c 1 -g 0.07')</programlisting>
+  </refsection>
+
+  <refsection>
+    <title>Authors</title>
+
+    <simplelist>
+      <member>Chih-Jen Lin &lt;cjlin@csie.ntu.edu.tw&gt;</member>
+
+      <member>Chih-Chung Chang</member>
+
+      <member>Jun-Cheng Chen</member>
+
+      <member>Kuan-Jen Peng</member>
+
+      <member>Chih-Yuan Yang</member>
+
+      <member>Chih-Huai Cheng</member>
+
+      <member>Rong-En Fan</member>
+
+      <member>Ting-Fan Wu</member>
+
+      <member>Jia Wu &lt;jiawu83@gmail.com&gt;</member>
+    </simplelist>
+  </refsection>
+
+  <refsection>
+    <title>Bibliography</title>
+
+    <para>Chih-Chung Chang and Chih-Jen Lin, LIBSVM : a library for support
+    vector machines, 2001. Software available at
+    http://www.csie.ntu.edu.tw/~cjlin/libsvm.</para>
+  </refsection>
+
+  <refsection>
+    <title>Availability</title>
+
+    <para>The latest version of OpenPR can be found at
+    http://www.openpr.org.cn.</para>
+  </refsection>
+
+  <refsection>
+    <title>See Also</title>
+
+    <simplelist type="inline">
+      <member><link linkend="svmpredict">svmpredict</link></member>
+
+      <member><link linkend="readsparse">readsparse</link></member>
+    </simplelist>
+  </refsection>
+</refentry>

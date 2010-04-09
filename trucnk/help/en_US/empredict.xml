@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <author>
+      <personname>Jia Wu</personname>
+    </author>
+
+    <pubdate>December 2009</pubdate>
+  </info>
+
+  <refnamediv xml:id="empredict">
+    <refname>empredict</refname>
+
+    <refpurpose>Use trained parameter values of Gaussian mixtures by EM
+    algorithm to predict the labels of the input data points.</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+
+    <synopsis>[labels, probs] = empredict(test_samples, em_model)</synopsis>
+  </refsynopsisdiv>
+
+  <refsection>
+    <title>Parameters</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>test_samples</term>
+
+        <listitem>
+          <para>n*dim data matrix. Each row is a data point.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>em_model</term>
+
+        <listitem>
+          <para>The model trained by <link
+          linkend="emtrain">emtrain</link>.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>labels</term>
+
+        <listitem>
+          <para>The predicted labels of the input data.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>probs</term>
+
+        <listitem>
+          <para>Probabilites of data point belonging to each class.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsection>
+
+  <refsection>
+    <title>Examples</title>
+
+    <programlisting role="example">params = emparams(4, 0, 0, 10, 0.1);
+load('SCI/contrib/OpenPR-0.0.1/etc/data/data_em', 'train_samples');
+[em_model, labels] = emtrain(train_samples, params);
+dim = size(train_samples, 2);
+test_samples = rand(50, dim)+100*ones(50, dim);
+[labels, probs] = empredict(test_samples, em_model);</programlisting>
+  </refsection>
+
+  <refsection>
+    <title>Authors</title>
+
+    <simplelist>
+      <member>Jia Wu &lt;jiawu83@gmail.com&gt;</member>
+    </simplelist>
+  </refsection>
+
+  <refsection>
+    <title>Bibliography</title>
+
+    <para>J. A. Bilmes. A Gentle Tutorial of the EM Algorithm and its
+    Application to Parameter Estimation for Gaussian Mixture and Hidden Markov
+    Models. Technical Report TR-97-021, International Computer Science
+    Institute and Computer Science Division, University of California at
+    Berkeley, April 1998.</para>
+  </refsection>
+
+  <refsection>
+    <title>Availability</title>
+
+    <para>The latest version of OpenPR can be found at
+    http://www.openpr.org.cn.</para>
+  </refsection>
+
+  <refsection>
+    <title>See Also</title>
+
+    <simplelist type="inline">
+      <member><link linkend="emparams">emparams</link></member>
+
+      <member><link linkend="emtrain">emtrain</link></member>
+    </simplelist>
+  </refsection>
+</refentry>
