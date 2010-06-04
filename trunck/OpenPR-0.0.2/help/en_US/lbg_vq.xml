@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <author>
+      <personname>Jia Wu</personname>
+    </author>
+
+    <pubdate>April 2010</pubdate>
+  </info>
+
+  <refnamediv xml:id="lbg_vq">
+    <refname>lbg_vq</refname>
+
+    <refpurpose>Linde-Buzo-Gray Vector Quantization Algorithm (LBG Design
+    Algorithm)</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+
+    <synopsis>[code_vec,labels,Q] = lbg_vq(training_vec,codevec_num)</synopsis>
+  </refsynopsisdiv>
+
+  <refsection>
+    <title>Parameters</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>training_vec</term>
+
+        <listitem>
+          <para>k*M data matrix; each column is a data point</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>codevec_num</term>
+
+        <listitem>
+          <para>number of code vectors</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>code_vec</term>
+
+        <listitem>
+          <para>k*code_vec matrix; each column is a code vector</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>labels</term>
+
+        <listitem>
+          <para>1*M vector assigning each data point to a code vector</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Q</term>
+
+        <listitem>
+          <para></para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsection>
+
+  <refsection>
+    <title>Description</title>
+
+    <para>The function realizes vector quantization(VQ) proposed by
+    Linde,Buzo,Gray in 1980, based on a training sequence.</para>
+  </refsection>
+
+  <refsection>
+    <title>Authors</title>
+
+    <para>Jia Wu &lt;jiawu83@gmail.com&gt;</para>
+  </refsection>
+
+  <refsection>
+    <title>Availability</title>
+
+    <para>The latest version of OpenPR can be found at
+    http://www.openpr.org.cn.</para>
+  </refsection>
+</refentry>

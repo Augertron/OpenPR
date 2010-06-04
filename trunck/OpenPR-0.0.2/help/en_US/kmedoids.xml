@@ -11,19 +11,19 @@
       <personname>Jia Wu</personname>
     </author>
 
-    <pubdate>August 2009</pubdate>
+    <pubdate>May 2010</pubdate>
   </info>
 
-  <refnamediv xml:id="kmeans">
-    <refname>kmeans</refname>
+  <refnamediv xml:id="kmedoids">
+    <refname>kmedoids</refname>
 
-    <refpurpose>K-Means clustering</refpurpose>
+    <refpurpose>basic k-medoids clustering algorithm</refpurpose>
   </refnamediv>
 
   <refsynopsisdiv>
     <title>Calling Sequence</title>
 
-    <synopsis>IDX = kmeans(X, k)</synopsis>
+    <synopsis>[medoids, labels] = kmedoids(samples, knum)</synopsis>
   </refsynopsisdiv>
 
   <refsection>
@@ -31,28 +31,34 @@
 
     <variablelist>
       <varlistentry>
-        <term>X</term>
+        <term>samples</term>
 
         <listitem>
-          <para>n-by-p data matrix of input samples. Rows of X correspond to a
-          sample, columns correspond to variables.</para>
+          <para>dim*snum data matrix; each column is a data point</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
-        <term>k</term>
+        <term>knum</term>
 
         <listitem>
-          <para>Number of clusters to split the samples by.</para>
+          <para>number of the medoids</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
-        <term>IDX</term>
+        <term>medoids</term>
 
         <listitem>
-          <para>n-by-1 vector containing cluster indices of each
-          sample.</para>
+          <para>dim*knum matrix; each column is a cluster center</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>labels</term>
+
+        <listitem>
+          <para>1*snum vector assigning each data point to a cluster</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -61,29 +67,34 @@
   <refsection>
     <title>Description</title>
 
-    <para>The <emphasis>kmeans</emphasis> function implements the K-Means
-    algorithm that finds centers of <emphasis>k</emphasis> clusters and groups
-    the input samples around the clusters. <emphasis>IDX(i)</emphasis>
-    contains the cluster index of the sample stored in the i-th row of
-    <emphasis>X</emphasis>.</para>
+    <para>The function partitions the <emphasis>samples</emphasis> into
+    <emphasis>knum</emphasis> groups and minize the squared error. It chooses
+    datapoints as centers.</para>
   </refsection>
 
   <refsection>
     <title>Examples</title>
 
-    <programlisting role="example">x = [rand(100, 2)+ones(100, 2);rand(100, 2)-ones(100, 2)];
-idx = kmeans(x, 2);
-plot(x(idx==1, 1), x(idx==1, 2), 'r.', 'MarkerSize', 5);
-set(gca(),"auto_clear","off")
-plot(x(idx==2, 1), x(idx==2, 2), 'b.', 'MarkerSize', 5);</programlisting>
+    <programlisting role="example">load((SCI+'/contrib/OpenPR-0.0.2/etc/data/data_kmedoids','motor');
+c=4;
+[medoids, labels]=kmedoids(motor,c);
+
+set(gca(),"auto_clear","off");
+
+col = ['r*','g+','bx','y.'];
+cen = ['ro','go','bo','yo'];
+for i=1:c,
+  idx=find(labels==i);
+  cluster=motor(:,idx);
+  plot(cluster(1,:),cluster(2,:),col(i));
+  plot(medoids(1,i),medoids(2,i),cen(i));
+end</programlisting>
   </refsection>
 
   <refsection>
     <title>Authors</title>
 
-    <simplelist>
-      <member>Jia Wu &lt;jiawu83@gmail.com&gt;</member>
-    </simplelist>
+    <para>Jia Wu &lt;jiawu83@gmail.com&gt;</para>
   </refsection>
 
   <refsection>
@@ -97,9 +108,7 @@ plot(x(idx==2, 1), x(idx==2, 2), 'b.', 'MarkerSize', 5);</programlisting>
     <title>See Also</title>
 
     <simplelist type="inline">
-      <member><link linkend="kmeans_sci">kmeans_sci</link></member>
-
-      <member><link linkend="kmedoids">kmedoids</link></member>
+      <member><link linkend="kmeans">kmeans</link></member>
     </simplelist>
   </refsection>
 </refentry>
