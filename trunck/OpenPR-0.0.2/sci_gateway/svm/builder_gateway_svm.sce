@@ -4,7 +4,7 @@ table = ['readsparse', 'read_sparse', 'cmex';
 		 'svmtrain',   'svmtrain',    'cmex';
 		 'svmpredict', 'svmpredict', 'cmex'];
 		 
-files = ['svm.cpp', 'svm_model_scilab.c', 'svmtrain.c', 'svmpredict.c', 'read_sparse.c'];
+files = ['svm.h', 'svm_model_scilab.h', 'svm.cpp', 'svm_model_scilab.c', 'svmtrain.c', 'svmpredict.c', 'read_sparse.c'];
 
 
 libs = [];
