@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <author>
+      <personname>Jia Wu</personname>
+    </author>
+
+    <pubdate>June 2010</pubdate>
+  </info>
+
+  <refnamediv xml:id="least_squares">
+    <refname>least_squares</refname>
+
+    <refpurpose>use least-squares algorithm to classify</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+
+    <synopsis>[test_labels, a] = least_squares(train_samples, train_labels, test_samples)</synopsis>
+  </refsynopsisdiv>
+
+  <refsection>
+    <title>Parameters</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>train_samples</term>
+
+        <listitem>
+          <para>dim*num data matrix; each column is a data sapmle, each row is
+          a feature</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>train_labels</term>
+
+        <listitem>
+          <para>1*num vector of labels for each data sample</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>test_samples</term>
+
+        <listitem>
+          <para>dim*test_num data matrix</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>test_labels</term>
+
+        <listitem>
+          <para>1*test_num vector of predicted labels for test_samples</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>a</term>
+
+        <listitem>
+          <para>weighted vector</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsection>
+
+  <refsection>
+    <title>Author</title>
+
+    <simplelist>
+      <member>Jia Wu &lt;jiawu83@gmail.com&gt;</member>
+    </simplelist>
+  </refsection>
+
+  <refsection>
+    <title>Availability</title>
+
+    <para>The latest version of OpenPR can be found at
+    http://www.openpr.org.cn.</para>
+  </refsection>
+</refentry>

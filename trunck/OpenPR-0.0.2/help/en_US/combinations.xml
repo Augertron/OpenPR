@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <author>
+      <personname>Jia Wu</personname>
+    </author>
+
+    <pubdate>June 2010</pubdate>
+  </info>
+
+  <refnamediv xml:id="combinations">
+    <refname>combinations</refname>
+
+    <refpurpose>find all the combinations of given number of
+    indices</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+
+    <synopsis>comb_mat = combinations(indices, number)</synopsis>
+  </refsynopsisdiv>
+
+  <refsection>
+    <title>Parameters</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>indices</term>
+
+        <listitem>
+          <para>input indices and should be a vector</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>number</term>
+
+        <listitem>
+          <para>the required number of indices</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>comb_mat</term>
+
+        <listitem>
+          <para>all the combinations of the required number of indices; the
+          size is comb_num*number, comb_num is the number of all possible
+          combinations, and num is the required number of indices </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsection>
+
+  <refsection>
+    <title>Description</title>
+
+    <para>The function is to find all the combinations of a sequence given a
+    number of elements.</para>
+  </refsection>
+
+  <refsection>
+    <title>Examples</title>
+
+    <programlisting role="example">comb_mat = combinations([1 4 6 2 9 8 3 5], 3)</programlisting>
+  </refsection>
+
+  <refsection>
+    <title>Author</title>
+
+    <simplelist>
+      <member>Jia Wu &lt;jiawu83@gmail.com&gt;</member>
+    </simplelist>
+  </refsection>
+
+  <refsection>
+    <title>Availability</title>
+
+    <para>The latest version of OpenPR can be found at
+    http://www.openpr.org.cn.</para>
+  </refsection>
+</refentry>
