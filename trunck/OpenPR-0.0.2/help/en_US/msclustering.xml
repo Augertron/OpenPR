@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <author>
+      <personname>Jia Wu</personname>
+    </author>
+
+    <pubdate>June 2010</pubdate>
+  </info>
+
+  <refnamediv xml:id="msclustering">
+    <refname>msclustering</refname>
+
+    <refpurpose>Mean-Shift Clustering</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+
+    <synopsis>[cluster_centers, sample_id] = msclustering(samples, h)</synopsis>
+  </refsynopsisdiv>
+
+  <refsection>
+    <title>Parameters</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>samples</term>
+
+        <listitem>
+          <para>dim*num data matrix; each column is a data point</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>h</term>
+
+        <listitem>
+          <para>parameter for bandwidth</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>cluster_centers</term>
+
+        <listitem>
+          <para>cluster centers</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>sample_id</term>
+
+        <listitem>
+          <para>label for each sample to which cluster it belongs to</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsection>
+
+  <refsection>
+    <title>Description</title>
+
+    <para>Mean-Shift clustering algorithm is a nonparametric clustering
+    technique which does not require the prior knowledge of the number of
+    clusters, and does not constrain the shape of the clusters. It's a
+    practical application of the mode finding procedure. This function
+    <emphasis>msclustering</emphasis> realizes the mean-shift clustering
+    algorithm with a flat kernel.</para>
+  </refsection>
+
+  <refsection>
+    <title>Examples</title>
+
+    <programlisting role="example">//create samples points
+path=SCI+'/contrib/OpenPR-0.0.2/etc/data/data_msc';
+load(path,'samples');
+h=0.75;
+[cluster_centers, sample_id]=msclustering(samples,h);
+//plot the samples and the cluster centers
+set(gca(),'auto_clear','off');
+for i=1:size(cluster_centers,2),
+  colors=rand(1,3);
+  plot(samples(1,find(sample_id==i)),samples(2,find(sample_id==i)),'.','markersize',4,'markfor',colors,'markbac',colors);
+  plot(cluster_centers(1,i),cluster_centers(2,i),'o','markersize',8,'markfor','k','markbac',colors);
+end
+</programlisting>
+  </refsection>
+
+  <refsection>
+    <title>Author</title>
+
+    <simplelist>
+      <member>Jia Wu &lt;jiawu83@gmail.com&gt;</member>
+    </simplelist>
+  </refsection>
+
+  <refsection>
+    <title>Bibliography</title>
+
+    <para>Fukunaga, K.; Hostetler, L.; , "The estimation of the gradient of a
+    density function, with applications in pattern recognition," Information
+    Theory, IEEE Transactions on , vol.21, no.1, pp. 32- 40, Jan 1975</para>
+  </refsection>
+
+  <refsection>
+    <title>Availability</title>
+
+    <para>The latest version of OpenPR can be found at
+    http://www.openpr.org.cn.</para>
+  </refsection>
+
+  <refsection>
+    <title>See Also</title>
+
+    <simplelist type="inline">
+      <member><link linkend="aggloms">aggloms</link></member>
+    </simplelist>
+  </refsection>
+</refentry>
