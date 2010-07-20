@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <author>
+      <personname>Jia Wu</personname>
+    </author>
+
+    <pubdate>July 2010</pubdate>
+  </info>
+
+  <refnamediv xml:id="pnn_classify">
+    <refname>pnn_classify</refname>
+
+    <refpurpose>classification using a Parzen probabilistic neural
+    network</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+
+    <synopsis>test_labels = pnn_classify(net, test_samples, sigma)</synopsis>
+  </refsynopsisdiv>
+
+  <refsection>
+    <title>Parameters</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>net</term>
+
+        <listitem>
+          <para>a trained Parzen probabilistic neural network</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>test_samples</term>
+
+        <listitem>
+          <para>dim*numt data matrix; each column is a data point</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>sigma</term>
+
+        <listitem>
+          <para>window width of the transfer function(default 2)</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>test_labels</term>
+
+        <listitem>
+          <para>1*numt vector of labels of each test sample</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsection>
+
+  <refsection>
+    <title>Description</title>
+
+    <para>Probability neural network(PNN) is a hardware implementation of the
+    Parzen windows approach. This function classifies the samples according to
+    the maximal activation of the network.</para>
+  </refsection>
+
+  <refsection>
+    <title>Examples</title>
+
+    <programlisting role="example">train_samples = [100*rand(2,100), (-100)*rand(2,30)];
+train_labels = [ones(1,100), 2*ones(1,30)];
+net = pnn_train(train_samples, train_labels);
+
+test_samples = [100*rand(2,5), (-100)*rand(2,5)];
+test_labels = pnn_classify(net, test_samples)</programlisting>
+  </refsection>
+
+  <refsection>
+    <title>Author</title>
+
+    <simplelist>
+      <member>Jia Wu &lt;jiawu83@gmail.com&gt;</member>
+    </simplelist>
+  </refsection>
+
+  <refsection>
+    <title>Availability</title>
+
+    <para>The latest version of OpenPR can be found at
+    http://www.openpr.org.cn.</para>
+  </refsection>
+
+  <refsection>
+    <title>See Also</title>
+
+    <simplelist type="inline">
+      <member><link linkend="parzen_classify">parzen_classify</link></member>
+
+      <member><link linkend="pnn_train">pnn_train</link></member>
+
+      <member><link linkend="rce_train">rce_train</link></member>
+
+      <member><link linkend="rce_classify">rce_classify</link></member>
+    </simplelist>
+  </refsection>
+</refentry>

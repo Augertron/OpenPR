@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <author>
+      <personname>Jia Wu</personname>
+    </author>
+
+    <pubdate>July 2010</pubdate>
+  </info>
+
+  <refnamediv xml:id="rce_classify">
+    <refname>rce_classify</refname>
+
+    <refpurpose>classification using a RCE(reduced coulomb energy)
+    network</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+
+    <synopsis>test_labels = rce_classify(net, test_samples)</synopsis>
+  </refsynopsisdiv>
+
+  <refsection>
+    <title>Parameters</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>net</term>
+
+        <listitem>
+          <para>a trained reduced coulomb energy network</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>test_samples</term>
+
+        <listitem>
+          <para>dim*numt data matrix; each column is a data point</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>test_labels</term>
+
+        <listitem>
+          <para>1*numt vector of labels of each test sample</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsection>
+
+  <refsection>
+    <title>Description</title>
+
+    <para>Reduced coulomb energy of RCE network is one representative method
+    of <emphasis>potential functions</emphasis>, which is the simplest method
+    of some relaxation techniques. This function classifies the samples using
+    a trained RCE network. </para>
+  </refsection>
+
+  <refsection>
+    <title>Author</title>
+
+    <simplelist>
+      <member>Jia Wu &lt;jiawu83@gmail.com&gt;</member>
+    </simplelist>
+  </refsection>
+
+  <refsection>
+    <title>Availability</title>
+
+    <para>The latest version of OpenPR can be found at
+    http://www.openpr.org.cn.</para>
+  </refsection>
+
+  <refsection>
+    <title>See Also</title>
+
+    <simplelist type="inline">
+      <member><link linkend="parzen_classify">parzen_classify</link></member>
+
+      <member><link linkend="pnn_train">pnn_train</link></member>
+
+      <member><link linkend="pnn_classify">pnn_classify</link></member>
+
+      <member><link linkend="rce_train">rce_train</link></member>
+    </simplelist>
+  </refsection>
+</refentry>
