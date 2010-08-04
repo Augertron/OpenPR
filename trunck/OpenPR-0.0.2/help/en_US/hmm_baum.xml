@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <author>
+      <personname>Jia Wu</personname>
+    </author>
+
+    <pubdate>August 2010</pubdate>
+  </info>
+
+  <refnamediv xml:id="hmm_baum">
+    <refname>hmm_baum</refname>
+
+    <refpurpose>Baum-Welch algorithm for estimating the parameters of a hidden
+    markov model given an observation sequence</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+
+    <synopsis>[tran_prob, emit_prob, start_prob] = hmm_baum(num_states, num_symbols, ob_seq)</synopsis>
+  </refsynopsisdiv>
+
+  <refsection>
+    <title>Parameters</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>num_states</term>
+
+        <listitem>
+          <para>number of hidden states</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>num_symbols</term>
+
+        <listitem>
+          <para>number of visible states</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>ob_seq</term>
+
+        <listitem>
+          <para>observation sequence in numerics</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>tran_prob</term>
+
+        <listitem>
+          <para>transition probability matrix</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>emit_prob</term>
+
+        <listitem>
+          <para>emission probability matrix</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>start_prob</term>
+
+        <listitem>
+          <para>initial probability vector</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsection>
+
+  <refsection>
+    <title>Examples</title>
+
+    <programlisting role="example">num_states = 3;
+num_symbols = 2;
+ob_seq = [2 1 2 1 2 2 1 2 1 2 1 1 1 2 1 1 2 1 2 1 2 1 1 2 2 2 2 1 2 1 1 2 1 1 2 1 2 1 2 2 1 1 1 1 2 1 2 2 1 1];
+
+[tran_prob, emit_prob, start_prob] = hmm_baum(num_states, num_symbols, ob_seq)</programlisting>
+  </refsection>
+
+  <refsection>
+    <title>Authors</title>
+
+    <simplelist>
+      <member>Jia Wu &lt;jiawu83@gmail.com&gt;</member>
+    </simplelist>
+  </refsection>
+
+  <refsection>
+    <title>Bibliography</title>
+
+    <para>A tutorial on Hidden Markov Models and selected applications in
+    speech recognition, L. Rabiner, 1989, Proc. IEEE 77(2):257--286.</para>
+  </refsection>
+
+  <refsection>
+    <title>Availability</title>
+
+    <para>The latest version of OpenPR can be found at
+    http://www.openpr.org.cn.</para>
+  </refsection>
+
+  <refsection>
+    <title>See Also</title>
+
+    <simplelist type="inline">
+      <member><link linkend="hmm_forward">hmm_forward</link></member>
+
+      <member><link linkend="hmm_backward">hmm_backward</link></member>
+
+      <member><link linkend="hmm_viterbi">hmm_viterbi</link></member>
+    </simplelist>
+  </refsection>
+</refentry>
