@@ -88,10 +88,6 @@ function [a, test_labels] = perceptron_batch(train_samples, train_labels, param,
     idx2 = find(train_labels==class(2));
     y(:,idx2) = -y(:,idx2);    
     
-    labels = train_labels;
-    labels(1,idx1) = 1;
-    labels(1,idx2) = 0;
-    
     //initialize the weights
     a = sum(y, 'c');
     
