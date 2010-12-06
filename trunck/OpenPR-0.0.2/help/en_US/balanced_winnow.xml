@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <author>
+      <personname>Jia WU</personname>
+    </author>
+
+    <pubdate>November 2010</pubdate>
+  </info>
+
+  <refnamediv xml:id="balanced_winnow">
+    <refname>balanced_winnow</refname>
+
+    <refpurpose>Balanced Winnow Algorithm (for two-category
+    cases)</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+
+    <synopsis>[a_plus, a_minus, test_labels] = balanced_winnow(train_samples, train_labels, param, test_samples)</synopsis>
+  </refsynopsisdiv>
+
+  <refsection>
+    <title>Parameters</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>train_samples</term>
+
+        <listitem>
+          <para>training data matrix of size dim*num_tr; each column is a data
+          point</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>train_labels</term>
+
+        <listitem>
+          <para>1*num_tr vector of labels for the training samples</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>param</term>
+
+        <listitem>
+          <para>parameters for the criterion, including the maximum number of
+          iterations, the convergence rate and the promotion parameter:
+          [iterm,eta,alpha]; The default value is [1000,0.01,2].</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>test_samples</term>
+
+        <listitem>
+          <para>test data matrix of size dim*num_te; each column is a data
+          point</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>a_plus</term>
+
+        <listitem>
+          <para>positive weight vector</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>a_minus</term>
+
+        <listitem>
+          <para>negative weight vector</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>test_labels</term>
+
+        <listitem>
+          <para>predicted labels for the test samples</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsection>
+
+  <refsection>
+    <title>Description</title>
+
+    <para>The function finds positive weight vector and negative weight vector
+    using balanced Winnow algorithm.</para>
+  </refsection>
+
+  <refsection>
+    <title>Authors</title>
+
+    <simplelist>
+      <member>Jia WU &lt;jiawu83@gmail.com&gt;</member>
+    </simplelist>
+  </refsection>
+
+  <refsection>
+    <title>Availability</title>
+
+    <para>The latest version of OpenPR can be found at
+    http://www.openpr.org.cn</para>
+  </refsection>
+</refentry>
