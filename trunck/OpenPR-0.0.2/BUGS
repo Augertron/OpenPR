@@ -1,0 +1,4 @@
+BUGS
+=================================
+OpenPR-0.0.2 works well on Scilab 5.2x version but not on Scilab 5.3x version.
+We'll fix the problems in the near future.
