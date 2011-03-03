@@ -1,14 +1,14 @@
 ilib_name  = 'openpr_em'          
 
 // objects files (but do not give mexfiles here) 
-files = ['ml.o', 'mlem.o', 'ml_inner_functions.o', 'transformation.o', 'emtrain.o', 'empredict.o'];
+files = ['_ml.h', 'ml.o', 'mlem.o', 'ml_inner_functions.o', 'transformation.o', 'emtrain.o', 'empredict.o'];
 
 // table of (scilab_name,interface-name or mexfile-name, type) 
 table =['emtrain',  'emtrain',  'cmex';
 		'empredict','empredict','cmex'];
 
 if ~MSDOS then
-	files = ['_ml.h', files];
+//	files = ['_ml.h', files];
 	libs = [];
 	opencv_version = unix_g('pkg-config --modversion opencv');
 	if( length(opencv_version) == 0 | ( strtod( strsubst(opencv_version, '.', '')) < 200 ) )

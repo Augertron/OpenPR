@@ -3,12 +3,12 @@ libname = 'openpr_kmeans';
 
 names = ['kmeans', 'int_kmeans'];
 
-files = ['common.c', 'int_kmeans.c'];
+files = ['common.h', 'common.c', 'int_kmeans.c'];
 
 gateway_path = get_absolute_file_path('builder_gateway_kmeans.sce');
 
 if ~MSDOS then
-	files = ['common.h', files];
+//	files = ['common.h', files];
 	libs = [];
 	opencv_version = unix_g('pkg-config --modversion opencv');
 	if( length(opencv_version) == 0 | ( strtod( strsubst(opencv_version, '.', '')) < 200 ) )

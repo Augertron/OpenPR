@@ -3,13 +3,13 @@ libname = 'openpr_nbayes';
 
 names = ['nbayestrain', 'int_nbayestrain'; 'nbayespredict', 'int_nbayespredict'];
 
-files = ['common.c', 'mattransform.c', 'naivebayes.cpp', 'int_nbayestrain.cpp', 'int_nbayespredict.cpp'];
+files = [(listfiles('*.h'))', 'common.c', 'mattransform.c', 'naivebayes.cpp', 'int_nbayestrain.cpp', 'int_nbayespredict.cpp'];
 
 gateway_path = get_absolute_file_path('builder_gateway_nbayes.sce');
 
 if ~MSDOS then
-	hfiles = (listfiles('*.h'))';
-	files = [hfiles, files];
+//	hfiles = (listfiles('*.h'))';
+//	files = [hfiles, files];
 	libs = [];
 	opencv_version = unix_g('pkg-config --modversion opencv');
 	if( length(opencv_version) == 0 | ( strtod( strsubst(opencv_version, '.', '')) < 200 ) )

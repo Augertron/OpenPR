@@ -2,14 +2,14 @@ libname = 'openpr_qdmatch';
 
 names = ['qdmatch', 'int_qdmatch'];
 
-cppfiles = (listfiles('*.cpp'))';
-files = ['common.c', cppfiles];
+files = [(listfiles(['*.h'; '*.cpp']))', 'common.c', 'NyxMat.cc'];
+//files = ['common.c', cppfiles];
 
 gateway_path = get_absolute_file_path('builder_gateway_qdmatch.sce');
 
 if ~MSDOS then 
-	hfiles = (listfiles('*.h'))';
-	files = [hfiles, 'NyxMat.cc', files];
+//	hfiles = (listfiles('*.h'))';
+//	files = [hfiles, 'NyxMat.cc', files];
 	libs = [];
 	opencv_version = unix_g('pkg-config --modversion opencv');
 	if( length(opencv_version) == 0 | ( strtod( strsubst(opencv_version, '.', '')) < 200 ) )
