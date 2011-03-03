@@ -6,7 +6,7 @@ subdemolist = ["confusion matrix to normalized mutual information", "confmatrix2
 			   "kmeans", "kmeans.dem.sce";..			   
 			   "agglomerative hierarchical clustering", "ahclustering.dem.sce";..
 			   "basic leader-follower clustering", "leader_follower.dem.sce";..
-			   "agglomerative mean-shift clustering", "aggloms.dem.sce"];
-			   //"svmtrain", "svmtrain.dem.sce"];   
+			   "agglomerative mean-shift clustering", "aggloms.dem.sce";..
+			   "svmtrain", "svmtrain.dem.sce"];   
 
 subdemolist(:, 2) = openpr_demo_path + subdemolist(:, 2);
