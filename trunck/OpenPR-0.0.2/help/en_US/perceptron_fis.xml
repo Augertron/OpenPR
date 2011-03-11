@@ -94,7 +94,8 @@
   <refsection>
     <title>Examples</title>
 
-    <programlisting role="example">load('SCI/contrib/OpenPR-0.0.2/etc/data/data_ldf','patterns','targets'); 
+    <programlisting role="example">patterns = read("SCI/contrib/OpenPR-0.0.2/etc/data/perceptron_data",2,40);
+targets = read("SCI/contrib/OpenPR-0.0.2/etc/data/perceptron_label",1,40); 
 train_samples=[patterns(:,1:7),patterns(:,11:17)]; 
 train_labels=[targets(:,1:7),targets(:,11:17)]; 
 param=4000;
