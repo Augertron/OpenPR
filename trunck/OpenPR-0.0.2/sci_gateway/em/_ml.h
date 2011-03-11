@@ -48,6 +48,7 @@
 #include "ml.h"
 
 #include "cxmisc.h"
+#include <cvinternal.h>
 
 #include <assert.h>
 #include <float.h>
