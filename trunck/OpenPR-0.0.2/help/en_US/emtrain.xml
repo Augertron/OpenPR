@@ -112,7 +112,7 @@
     <title>Examples</title>
 
     <programlisting role="example">params = emparams(4, 0, 0, 10, 0.1);
-load('SCI/contrib/OpenPR-0.0.1/etc/data/data_em', 'train_samples');
+train_samples = read(SCI+'/contrib/OpenPR-0.0.2/etc/data/em_data',100,2);
 [em_model, labels] = emtrain(train_samples, params);</programlisting>
   </refsection>
 
