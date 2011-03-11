@@ -85,8 +85,7 @@
     <title>Examples</title>
 
     <programlisting role="example">//create samples points
-path=SCI+'/contrib/OpenPR-0.0.2/etc/data/data_msc';
-load(path,'samples');
+samples = read(SCI+'/contrib/OpenPR-0.0.2/etc/data/msc_data',2,750);
 h=0.75;
 [cluster_centers, sample_id]=msclustering(samples,h);
 //plot the samples and the cluster centers
