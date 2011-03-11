@@ -59,7 +59,7 @@
   <refsection>
     <title>Examples</title>
 
-    <programlisting role="example">        [docnum wordnum matrix]=plsiread('data_plsi', 0);
+    <programlisting role="example">        [docnum wordnum matrix]=plsiread(SCI+'/contrib/OpenPR-0.0.2/etc/data/plsi_data', 0);
         [pz pwz pdz foldnums]=plsitrain(docnum,wordnum,matrix,20,1,2,0.2,0.8,0); </programlisting>
   </refsection>
 
