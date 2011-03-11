@@ -110,11 +110,11 @@ function [a, test_labels] = lms(train_samples, train_labels, param, test_samples
     //classify
     if argn(2)==4,
     
-        test_samples(dim,:) = ones(1,size(test_samples,2));  //augment
-    
-        if (size(test_samples,1)~=dim),
+        if (size(test_samples,1)~=dim-1),
             error('Test samples and training samples should have the dimension.')
         end   
+          
+        test_samples(dim,:) = ones(1,size(test_samples,2));  //augment                 
           
         test_labels = (a'*test_samples)>0;
         idx1 = find(test_labels==%T);

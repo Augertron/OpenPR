@@ -1,4 +1,15 @@
 BUGS
 =================================
-OpenPR-0.0.2 works well on Scilab 5.2x version but not on Scilab 5.3x version.
+1. OpenPR-0.0.2 works quite well on Scilab 5.2x version,
+   but not on Scilab 5.3x version. One reason is the building of the 
+   help files. The documentation system of version 5.3 had a massive
+   improvement. Our help files are not compatible with the new version.
+2. Since version 5.0, Scilab uses a "GLJPanel" to display grahpics.
+   This component are not correctly supported on some platforms. So
+   if your configuration doesn't meet the conditions, there might be
+   problems when calling graphics related functions of Scilab. Partially
+   because of this, we delete the 'demo' module.
+
+
+=================================
 We'll fix the problems in the near future.
