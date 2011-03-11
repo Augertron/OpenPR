@@ -92,8 +92,8 @@
 
     <programlisting role="example">//This is an example program to show the performance of our Agglomerative Mean-Shift clustering algorithm on a synthetic 2D dataset.
 
-file = SCI+'/contrib/OpenPR-0.0.1/etc/data/data_aggloms';
-load(file, 'Data', 'Label');
+Data = read(SCI+'/contrib/OpenPR-0.0.2/etc/data/aggloms_data',2,1810);
+Label = read(SCI+'/contrib/OpenPR-0.0.2/etc/data/aggloms_label',1,1810);
 
 sigma = 0.4; // kernel bandwidth
 ite_num = 60; // iteration times

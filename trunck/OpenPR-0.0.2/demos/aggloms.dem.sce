@@ -7,8 +7,8 @@ demo_viewCode("aggloms.dem.sce");
 
 // DEMO START
 
-data_path = SCI+'/contrib/OpenPR-0.0.2/etc/data/data_aggloms';
-load(data_path, 'Data', 'Label');
+Data = read(SCI+'/contrib/OpenPR-0.0.2/etc/data/aggloms_data',2,1810);
+Label = read(SCI+'/contrib/OpenPR-0.0.2/etc/data/aggloms_label',1,1810);
 
 sigma = 0.4; // kernel bandwidth
 ite_num = 60; // iteration times
