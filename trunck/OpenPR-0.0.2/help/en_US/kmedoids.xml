@@ -75,7 +75,7 @@
   <refsection>
     <title>Examples</title>
 
-    <programlisting role="example">load((SCI+'/contrib/OpenPR-0.0.2/etc/data/data_kmedoids','motor');
+    <programlisting role="example">motor = read(SCI+'/contrib/OpenPR-0.0.2/etc/data/kmedoids_data',2,133);
 c=4;
 [medoids, labels]=kmedoids(motor,c);
 
