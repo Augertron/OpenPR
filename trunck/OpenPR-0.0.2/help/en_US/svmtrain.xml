@@ -301,7 +301,7 @@
   <refsection>
     <title>Examples</title>
 
-    <programlisting role="example">       [label_vector, instance_vector] = readsparse('heart_scale');
+    <programlisting role="example">       [label_vector, instance_vector] = readsparse(SCI+'/contrib/OpenPR-0.0.2/etc/data/heart_scale');
        modle = svmtrain(label_vector, instance_vector, '-c 1 -g 0.07')</programlisting>
   </refsection>
 
