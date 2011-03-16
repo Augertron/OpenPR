@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+<refentry version="5.0-subset Scilab" xml:id="fuzzy_kmeans" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           xmlns:xi="http://www.w3.org/2001/XInclude"
           xmlns:svg="http://www.w3.org/2000/svg"
@@ -8,13 +9,13 @@
           xmlns:db="http://docbook.org/ns/docbook">
   <info>
     <author>
-      <personname>Jia Wu </personname>
+      <personname>Jia Wu</personname>
     </author>
 
     <pubdate>December 2009</pubdate>
   </info>
 
-  <refnamediv xml:id="fuzzy_kmeans">
+  <refnamediv>
     <refname>fuzzy_kmeans</refname>
 
     <refpurpose>Fuzzy K-Means Algorithm</refpurpose>

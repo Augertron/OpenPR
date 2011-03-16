@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+<refentry version="5.0-subset Scilab" xml:id="readsparse" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           xmlns:svg="http://www.w3.org/2000/svg"
           xmlns:ns4="http://www.w3.org/1999/xhtml"
@@ -13,7 +14,7 @@
     <pubdate>May, 2009</pubdate>
   </info>
 
-  <refnamediv xml:id="readsparse">
+  <refnamediv>
     <refname>readsparse</refname>
 
     <refpurpose>Read files in LIBSVM format.</refpurpose>

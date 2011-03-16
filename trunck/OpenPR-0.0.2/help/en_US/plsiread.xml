@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+<refentry version="5.0-subset Scilab" xml:id="plsiread" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           xmlns:xi="http://www.w3.org/2001/XInclude"
           xmlns:svg="http://www.w3.org/2000/svg"
@@ -14,7 +15,7 @@
     <pubdate>May, 2009</pubdate>
   </info>
 
-  <refnamediv xml:id="plsiread">
+  <refnamediv>
     <refname>plsiread</refname>
 
     <refpurpose>Read data from a file for training for the probabilistic
@@ -44,8 +45,8 @@
 
         <listitem>
           <para>Whether the data in the file uses a sparse way (i.e.:
-          wordid:count). 1 if the file is in the sparse style; 0 if not.
-          </para>
+          wordid:count). 1 if the file is in the sparse style; 0 if
+          not.</para>
         </listitem>
       </varlistentry>
 
@@ -69,8 +70,8 @@
         <term>matrix</term>
 
         <listitem>
-          <para>The term-document matrix whose size is (docnum by wordnum).
-          </para>
+          <para>The term-document matrix whose size is (docnum by
+          wordnum).</para>
         </listitem>
       </varlistentry>
     </variablelist>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<refentry version="5.0-subset Scilab" xmlns="http://docbook.org/ns/docbook"
+<refentry version="5.0-subset Scilab" xml:id="sphereconstruction"
+          xml:lang="en" xmlns="http://docbook.org/ns/docbook"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           xmlns:xi="http://www.w3.org/2001/XInclude"
           xmlns:svg="http://www.w3.org/2000/svg"
@@ -14,7 +15,7 @@
     <pubdate>June 2009</pubdate>
   </info>
 
-  <refnamediv xml:id="sphereconstruction">
+  <refnamediv>
     <refname>sphereconstruction</refname>
 
     <refpurpose>nstruct hypersphere from a given point by
