@@ -3,9 +3,9 @@ libname = 'openpr_kmeans';
 
 names = ['kmeans', 'int_kmeans'];
 
-files = ['common.h', 'common.c', 'int_kmeans.c'];
-
 gateway_path = get_absolute_file_path('builder_gateway_kmeans.sce');
+
+files = gateway_path+['common.h', 'common.c', 'int_kmeans.c'];
 
 if ~MSDOS then
 //	files = ['common.h', files];

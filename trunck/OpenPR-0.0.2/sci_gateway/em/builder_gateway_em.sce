@@ -1,7 +1,12 @@
-ilib_name  = 'openpr_em'          
+gateway_path = get_absolute_file_path('builder_gateway_em.sce');
+
+cur_path = pwd();
+chdir(gateway_path);
+
+ilib_name  = 'openpr_em';
 
 // objects files (but do not give mexfiles here) 
-files = ['_ml.h', 'ml.o', 'mlem.o', 'ml_inner_functions.o', 'transformation.o', 'emtrain.o', 'empredict.o'];
+files = ['_ml.h', 'ml.h', 'transformation.h', 'ml.cpp', 'mlem.cpp', 'ml_inner_functions.cpp', 'transformation.cpp', 'emtrain.cpp', 'empredict.cpp'];
 
 // table of (scilab_name,interface-name or mexfile-name, type) 
 table =['emtrain',  'emtrain',  'cmex';
@@ -23,9 +28,9 @@ else
     cflags = "-I"""+SCI+"/contrib/OpenPR-0.0.2/opencv/include"" ";
 end
 
-// do not modify below
-// ----------------------------------------------
-ilib_mex_build(ilib_name,table,files,libs,'Makelib',ldflags,cflags)
+ilib_mex_build(ilib_name,table,files,libs,'',ldflags,cflags);
 
-clear ilib_name files table other_lib_path libs ldflags cflags ilib_mex_build
+clear gateway_path ilib_name files table other_lib_path libs ldflags cflags ilib_mex_build;
+
+chdir(cur_path);
 

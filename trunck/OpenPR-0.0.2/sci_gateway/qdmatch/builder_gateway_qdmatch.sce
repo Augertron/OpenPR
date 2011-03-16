@@ -2,10 +2,10 @@ libname = 'openpr_qdmatch';
 
 names = ['qdmatch', 'int_qdmatch'];
 
-files = [(listfiles(['*.h'; '*.cpp']))', 'common.c', 'NyxMat.cc'];
-//files = ['common.c', cppfiles];
-
 gateway_path = get_absolute_file_path('builder_gateway_qdmatch.sce');
+
+files = [(listfiles([gateway_path+'*.h'; gateway_path+'*.cpp']))', gateway_path+'common.c', gateway_path+'NyxMat.cc'];
+//files = ['common.c', cppfiles];
 
 if ~MSDOS then 
 //	hfiles = (listfiles('*.h'))';
@@ -27,5 +27,4 @@ end
 tbx_build_gateway(libname, names, files, gateway_path, libs, ldflags, cflags);
 
 clear libname names cppfiles files gateway_path other_lib_path libs ldflags cflags tbx_builde_gateway;
-
 

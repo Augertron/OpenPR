@@ -1,10 +1,12 @@
+gateway_path = get_absolute_file_path('builder_gateway_svm.sce');
+
 lib_name = 'openpr_svm';
 
 table = ['readsparse', 'read_sparse', 'cmex';
 		 'svmtrain',   'svmtrain',    'cmex';
 		 'svmpredict', 'svmpredict', 'cmex'];
-		 
-files = ['svm.h', 'svm_model_scilab.h', 'svm.cpp', 'svm_model_scilab.c', 'svmtrain.c', 'svmpredict.c', 'read_sparse.c'];
+
+files = gateway_path+['svm.h', 'svm_model_scilab.h', 'svm.cpp', 'svm_model_scilab.c', 'svmtrain.c', 'svmpredict.c', 'read_sparse.c'];
 
 
 libs = [];
@@ -28,7 +30,10 @@ else
 	cc = "";
 end
 
-ilib_mex_build(lib_name, table, files, libs, 'Makelib', ldflags, cflags, fflags, cc);
+cur_path = pwd();
+chdir(gateway_path);
+ilib_mex_build(lib_name, table, files, libs, '', ldflags, cflags, fflags, cc);
+chdir(cur_path);
 
-clear lib_name table files libs ldflags cflags fflags cc ilib_mex_build;
+clear gateway_path lib_name table files libs ldflags cflags fflags cc ilib_mex_build cur_path;
 

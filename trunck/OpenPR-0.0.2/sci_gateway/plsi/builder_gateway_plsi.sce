@@ -2,9 +2,9 @@ libname = 'openpr_plsi';
 
 names = ['plsiread','int_readdata'; 'plsitrain','int_plsitrain'];
 
-gateway_path = get_absolute_file_path('builder_gateway_plsi.sce');
+gateway_path = get_absolute_file_path("builder_gateway_plsi.sce");
 
-files = (listfiles(['*.h'; '*.cpp']))';
+files = (listfiles([gateway_path+'*.h'; gateway_path+'*.cpp']))';
 
 //if ~MSDOS then
 //	hfiles = (listfiles('*.h'))';

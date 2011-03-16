@@ -3,9 +3,11 @@ libname = 'openpr_nbayes';
 
 names = ['nbayestrain', 'int_nbayestrain'; 'nbayespredict', 'int_nbayespredict'];
 
-files = [(listfiles('*.h'))', 'common.c', 'mattransform.c', 'naivebayes.cpp', 'int_nbayestrain.cpp', 'int_nbayespredict.cpp'];
-
 gateway_path = get_absolute_file_path('builder_gateway_nbayes.sce');
+
+header = (listfiles(gateway_path+'*.h'))';
+src = gateway_path+['common.c', 'mattransform.c', 'naivebayes.cpp', 'int_nbayestrain.cpp', 'int_nbayespredict.cpp'];
+files = [header, src];
 
 if ~MSDOS then
 //	hfiles = (listfiles('*.h'))';

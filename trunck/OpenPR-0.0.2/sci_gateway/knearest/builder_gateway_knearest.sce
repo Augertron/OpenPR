@@ -3,9 +3,9 @@ libname = 'openpr_knearest';
 
 names = ['knearest', 'int_knearest'];
 
-files = ['common.h', 'common.c', 'int_knearest.cpp'];
-
 gateway_path = get_absolute_file_path('builder_gateway_knearest.sce');
+
+files = gateway_path+['common.h', 'common.c', 'int_knearest.cpp'];
 
 if ~MSDOS then
 //	files = ['common.h', files];
