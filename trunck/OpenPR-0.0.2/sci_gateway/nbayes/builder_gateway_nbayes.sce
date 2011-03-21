@@ -1,17 +1,17 @@
+gateway_path = get_absolute_file_path('builder_gateway_nbayes.sce');
+
+cur_path = pwd();
+chdir(gateway_path);
 
 libname = 'openpr_nbayes';
 
 names = ['nbayestrain', 'int_nbayestrain'; 'nbayespredict', 'int_nbayespredict'];
 
-gateway_path = get_absolute_file_path('builder_gateway_nbayes.sce');
-
-header = (listfiles(gateway_path+'*.h'))';
-src = gateway_path+['common.c', 'mattransform.c', 'naivebayes.cpp', 'int_nbayestrain.cpp', 'int_nbayespredict.cpp'];
-files = [header, src];
+files = ['common.c', 'mattransform.c', 'naivebayes.cpp', 'int_nbayestrain.cpp', 'int_nbayespredict.cpp'];
 
 if ~MSDOS then
-//	hfiles = (listfiles('*.h'))';
-//	files = [hfiles, files];
+	hfiles = (listfiles('*.h'))';
+	files = [hfiles, files];
 	libs = [];
 	opencv_version = unix_g('pkg-config --modversion opencv');
 	if( length(opencv_version) == 0 | ( strtod( strsubst(opencv_version, '.', '')) < 200 ) )
@@ -28,6 +28,8 @@ end
 
 tbx_build_gateway(libname, names, files, gateway_path, libs, ldflags, cflags);
 
-clear libname names files gateway_path other_lib_path libs ldflags cflags tbx_builde_gateway;
+chdir(cur_path);
+
+clear libname names files gateway_path other_lib_path libs ldflags cflags tbx_builde_gateway cur_path;
 
 

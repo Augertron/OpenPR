@@ -1,14 +1,16 @@
+gateway_path = get_absolute_file_path('builder_gateway_knearest.sce');
+
+cur_path = pwd();
+chdir(gateway_path);
 
 libname = 'openpr_knearest';
 
 names = ['knearest', 'int_knearest'];
 
-gateway_path = get_absolute_file_path('builder_gateway_knearest.sce');
-
-files = gateway_path+['common.h', 'common.c', 'int_knearest.cpp'];
+files = ['common.c', 'int_knearest.cpp'];
 
 if ~MSDOS then
-//	files = ['common.h', files];
+	files = ['common.h', files];
 	libs = [];
 	opencv_version = unix_g('pkg-config --modversion opencv');
 	if( length(opencv_version) == 0 | ( strtod( strsubst(opencv_version, '.', '')) < 200 ) )
@@ -25,6 +27,8 @@ end
 
 tbx_build_gateway(libname, names, files, gateway_path, libs, ldflags, cflags);
 
-clear libname names files gateway_path libs ldflags cflags tbx_build_gateway;
+chdir(cur_path);
+
+clear libname names files gateway_path libs ldflags cflags tbx_build_gateway cur_path;
 
 

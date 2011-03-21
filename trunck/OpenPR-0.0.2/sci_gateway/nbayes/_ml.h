@@ -47,7 +47,10 @@
 
 #include "./naivebayes.h"
 #include "cxmisc.h"
-#include <cvinternal.h>
+
+#ifndef _MSC_VER
+	#include <cvinternal.h>
+#endif
 
 #include <assert.h>
 #include <float.h>

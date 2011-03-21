@@ -1,15 +1,17 @@
+gateway_path = get_absolute_file_path('builder_gateway_qdmatch.sce');
+
+cur_path = pwd();
+chdir(gateway_path);
+
 libname = 'openpr_qdmatch';
 
 names = ['qdmatch', 'int_qdmatch'];
 
-gateway_path = get_absolute_file_path('builder_gateway_qdmatch.sce');
-
-files = [(listfiles([gateway_path+'*.h'; gateway_path+'*.cpp']))', gateway_path+'common.c', gateway_path+'NyxMat.cc'];
-//files = ['common.c', cppfiles];
+files = [(listfiles(['*.cpp']))', 'common.c'];
 
 if ~MSDOS then 
-//	hfiles = (listfiles('*.h'))';
-//	files = [hfiles, 'NyxMat.cc', files];
+	hfiles = (listfiles('*.h'))';
+	files = [hfiles, 'NyxMat.cc', files];
 	libs = [];
 	opencv_version = unix_g('pkg-config --modversion opencv');
 	if( length(opencv_version) == 0 | ( strtod( strsubst(opencv_version, '.', '')) < 200 ) )
@@ -26,5 +28,7 @@ end
 
 tbx_build_gateway(libname, names, files, gateway_path, libs, ldflags, cflags);
 
-clear libname names cppfiles files gateway_path other_lib_path libs ldflags cflags tbx_builde_gateway;
+chdir(cur_path);
+
+clear libname names cppfiles files gateway_path other_lib_path libs ldflags cflags tbx_builde_gateway cur_path;
 
